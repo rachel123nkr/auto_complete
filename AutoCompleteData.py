@@ -18,10 +18,14 @@ class Node(object):
         self.prefix = prefix  # sentance
         self.children = dict()
 
-    def add_child(self, char):
-        if not self.children.get(char):
-            self.children[char] = Node(self.prefix + char)
-        return self.children[char]
+    def add_child(self, char, line = None):
+        if not self.children.get(char.lower()):
+            if line:
+                self.children[char.lower()] = Node(line)
+            else:
+                self.children[char.lower()] = Node(self.prefix + char)
+
+        return self.children[char.lower()]
 
     def __str__(self):
         res = self.prefix + "  children: \n"

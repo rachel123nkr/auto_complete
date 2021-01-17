@@ -1,4 +1,6 @@
 from AutoCompleteData import *
+
+
 # note : treat errors
 
 
@@ -11,15 +13,18 @@ def main():
             # set the tree for 1 sentence
             if line[-1] == '\n':
                 line = line[:-1]
-            for char in line:
-                curr_root = curr_root.add_child(char.lower())
+            for i in range(len(line)):
+                for char in line[i:-1]:
+                    curr_root = curr_root.add_child(char)
+                curr_root = curr_root.add_child(line[-1], line)
+                curr_root = auto_complete_tree
             line = file.readline()
-            curr_root = auto_complete_tree
 
+    #
     # print("auto_complete_tree\n " , auto_complete_tree)
-
-    # print("leaves\n " , auto_complete_tree.children["g"].get_leaves())
-    print("get_all_completions", get_all_completions("i eat", auto_complete_tree))
+    #
+    # print("leaves: ", auto_complete_tree.children["i"].get_leaves())
+    print("get_all_completions: ", get_all_completions("ea", auto_complete_tree))
 
 
 if __name__ == '__main__':
