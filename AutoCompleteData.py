@@ -3,10 +3,11 @@ from dataclasses import dataclass
 
 @dataclass
 class AutoCompleteData:
-    completed_sentence: str
-    source_text: str
-    offset: int
-    score: int
+    def __init__(self, completed_sentence, source_text, offset, score):
+        self.completed_sentence = completed_sentence
+        self.source_text = source_text
+        self.offset = offset
+        self.score = score
     # methods that you need to define by yourself
 
 
@@ -20,15 +21,15 @@ class Node(object):
         self.children = dict()
 
 
-    def add_child(self, char, line = None):
+    def add_child(self, char, line_data = None):
         # if char == ',':
         #     char = ' '
         if self.prefix != '' and self.prefix[-1] == ' ' and char == ' ':
             return self
         if not self.children.get(char.lower()):    
             self.children[char.lower()] = Node(self.prefix + char)
-        if line:
-            self.children[char.lower()].complete_senteces.append(line)
+        if line_data:
+            self.children[char.lower()].complete_senteces.append(line_data)
 
         return self.children[char.lower()]  
 
