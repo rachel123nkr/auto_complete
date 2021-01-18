@@ -1,5 +1,4 @@
-I eat,tasty banana
-i ea ttas
+I eat, tasty banana
 the banana is tasty
 I eat tasty apple
 the breakfast is  tasty

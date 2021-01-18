@@ -21,8 +21,8 @@ class Node(object):
 
 
     def add_child(self, char, line = None):
-        if char == ',':
-            char = ' '
+        # if char == ',':
+        #     char = ' '
         if self.prefix != '' and self.prefix[-1] == ' ' and char == ' ':
             return self
         if not self.children.get(char.lower()):    
@@ -61,35 +61,23 @@ def get_all_completions(txt, root: Node):
         return root.get_leaves()
     if root.children:
        
-        if txt[0] == ' ' and  len(txt)>1 and txt[1] ==' ':   
-            cur_node = root                                                      
-        elif txt[0] == ',' or txt[0] == ' ':
-            cur_node = root.children.get(' ')
+        if txt[0].isalnum() or (txt[0] == ' ' and (len(txt)==1 or (len(txt)>1 and txt[1] !=' '))):   
+            cur_node = root.children.get(txt[0].lower())    
         else:
-            cur_node = root.children.get(txt[0].lower())
-       
+            cur_node = root
+             
         if cur_node:
             return get_all_completions(txt[1:], cur_node)
-        
 
-
-        # if txt[0] != ',' or txt[0] != ' ' or (txt[0] == ' ' and  len(txt)>1 and txt[1]!=' ') :
+        # if txt[0] == ' ' and  len(txt)>1 and txt[1] ==' ':   
+        #     cur_node = root                                                      
+        # elif txt[0] == ',' or txt[0] == ' ':
+        #     cur_node = root.children.get(' ')
+        # else:
         #     cur_node = root.children.get(txt[0].lower())
-        #     if cur_node:
-        #         return get_all_completions(txt[1:], cur_node)
-        # else:
-        #      return get_all_completions(txt[1:], root)
-
-        # else:
-        #     if txt[0] == ' ':
-        #         cur_node = root.children.get(',')
-        #     if txt[0] == ',':
-        #         cur_node = root.children.get(' ')
-        #     if cur_node:
-        #         return get_all_completions(txt[1:], cur_node)
-        #     if txt[0] in [',', ' ']:
-        #         return get_all_completions(txt[1:], root)
-
+       
+        # if cur_node:
+        #     return get_all_completions(txt[1:], cur_node)
 
     return []
 
