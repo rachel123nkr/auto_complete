@@ -1,7 +1,9 @@
-I eat tasty banana
+I eat, tasty banana
 the banana is tasty
 I eat tasty apple
-the breakfast is tasty
+the breakfast is  tasty
+break
+my breakfast
 He eat
 I see
 I sow
