@@ -22,4 +22,4 @@ python main.py
 
 Example
 -----------
-![Farmers Market Finder Demo](demo/demo.gif)
+![Farmers Market Finder Demo](demo/error.gif)
