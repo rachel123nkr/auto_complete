@@ -22,4 +22,4 @@ python main.py
 
 Demo
 -----------
-![Farmers Market Finder Demo](demo/error.gif)
+![Farmers Market Finder Demo](https://user-images.githubusercontent.com/44622520/105209858-fb825280-5b52-11eb-9b94-bd2cd247f387.gif)
