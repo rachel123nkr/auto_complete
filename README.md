@@ -9,7 +9,7 @@ The user types characters and presses Enter. The system displays the five best c
 
 Quick start
 -----------
-a. First put all the files you want to run on them in Aechive directory
+a. First put all the files you want to run on them in "Archive" directory
 
 b. Run the offline stage
  ```
@@ -20,6 +20,6 @@ c. Run the online stage
 python main.py
  ```
 
-Example
+Demo
 -----------
 ![Farmers Market Finder Demo](demo/error.gif)

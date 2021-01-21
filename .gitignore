@@ -2,3 +2,5 @@
 __pycache__/
 stam.py
 *.obj
+python-3.8.4-docs-text/
+*.txt

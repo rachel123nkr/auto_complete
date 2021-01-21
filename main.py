@@ -1,5 +1,5 @@
 from handle_score import *
-from load_from_file import load_tree
+from save_and_load_on_file import load_tree
 
 
 def online():
@@ -16,7 +16,6 @@ def online():
 
 
 def main():
-    # build_tree('Aechive')
     online()
 
 
