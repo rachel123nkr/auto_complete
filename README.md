@@ -1,4 +1,4 @@
-# project with google - 
+# auto completion - collaboration with Google
 Program that enable completion of sentences from articles, documentation and information files on various technological issues.
 
 The program ran in two stages:
